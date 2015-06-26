@@ -29,6 +29,7 @@
     "qs": "^3.1.0",
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.7",
+    "react-input-color": "^1.3.6",
     "slugger": "^1.0.0",
     "standard": "^4.3.1",
     "style-loader": "^0.12.3",
@@ -44,8 +45,8 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "deploy": "surge -p public -d labelr.surge.sh",
-    "start": "webpack-dev-server",
+    "deploy": "npm run build && surge -p public -d important-amusement.surge.sh",
+    "start": "webpack-dev-server --hot --inline --progress",
     "yolo": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags && npm run build && npm run deploy"
   }
 }
